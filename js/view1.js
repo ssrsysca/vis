@@ -103,7 +103,7 @@ function view1() {
         for (nn = 0; nn < selectedData.length; ++nn) {
             if (selectedData[nn]) break;
         }
-        if (nn === selectedData.length) { 
+        if (nn === selectedData.length) {
             for (var i = 0; i < selectedNodes.length; ++i) selectedNodes[i] = false;
             return;
         }
@@ -151,6 +151,7 @@ function view1() {
 
     function showSelectedNodes() {
         deselectAll();
+        //这种恶心的代码到底是拿来干嘛的我日
         var nn;
         for (nn = 0; nn < selectedNodes.length; ++nn) {
             if (selectedNodes[nn]) break;
@@ -499,8 +500,8 @@ function view1() {
 
 
     }
-
-    d3.json("data/network.json",
+//"data/network.json"
+    d3.json('http://localhost:8080/draw',
         function (error, graph) {
             if (error) throw error;
             var i;
